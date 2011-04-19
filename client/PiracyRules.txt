@@ -1,0 +1,79 @@
+Piracy : The Game
+--------------------------
+[Objective]
+        In order to be declared victorious, at the end of the game (Turn 500) you need to have more gold stored in your ports than your opponent.
+        Please be aware that gold which pirates are holding does not contribute to this value. The gold must be deposited before turn 500.
+        If at any point in time a player has no pirates and does not have enough gold to produce another, they will lose instantly.
+        If at the end of the game players are tied in wealth, whoever has the larger army will win.
+        If players (by some miracle) have the same gold and army size, the player with the highest average health wins.
+        Otherwise, it is a tie (Player 2 will be declared victorious)
+
+[Pirates]
+       Cost - 50 gold
+       Moves - 1 per turn
+       Attacks - 1 per turn
+       Health - 3
+       Strength - 1
+ 
+       Pirates are bound to land unless they are on a ship.
+       Any number of FRIENDLY pirates may be on the same tile or ship. You may not move onto a space occupied by the enemy
+       If a pirate is on the same space as a ship when the ship moves, they will be assumed to be on the ship and move with it.
+       Pirates can ONLY attack pirates (friendly or enemy), not ships. 
+       When a pirate kills another pirate, any gold the other pirate was carrying will be transferred to the attacker.
+       If a pirate attacks himself or another friendly pirate the target will die instantly.
+       Pirates can build ports which MUST be placed on land adjacent to water and MUST be at least 3 spaces away from other ports.
+       Pirates can drop and pickup treasure.
+       If a pirate drops treasure on a ship, the gold will be added to the ship's gold.
+       If a pirate drops treasure ON a port it will be added to that player's total wealth which can be used to buy more units.
+       If a pirate picks up treasure FROM a port it will withdrawn from your total wealth and given to them in the form of gold.
+               (If gold is dropped on one port it can be immediately picked up from another port that you own)
+       
+[Ships]
+       Cost - 250 gold
+       Moves - 2 per turn
+       Attacks - 1 per turn
+       Health - 12
+       Strength - 1
+
+       Ships are bound to the sea, but can still move on and off of friendly ports.
+       There can only be ONE ship on a tile at a time.
+       If a ship sinks, all pirates and treasure that were on it will be lost to the abyss (So kill their pirates before you kill their ship! Better yet, steal their ship!)
+       Whichever player has a pirate on a ship owns it, NOT the person who built it.
+      If there are NO pirates on a ship, it is declared neutral and can be taken over by any pirate.
+
+[Treasure]
+       Treasure can either be carried by a pirate, ship, or simply be lying on the ground.
+       Whenever treasure is on the ground, it will gain interest at the end of each turn based on the following function : Sqrt(Distance to closest pirate).
+                 The further you are from the gold, the faster it increases in value (just roll with it).
+                 This factors in both friendly AND enemy pirates.
+        Treasure that is dropped on your port is removed from the game and added to your overall wealth.
+
+[Port]
+       Cost - 1000 gold
+       Health - In-freaking-destructible
+
+       Must be built next to water and no less than 3 spaces from any other port.
+       Allows you to build pirates and ships. These units will spawn on the port tile.
+       Ships can exist on ports, so they can be used as bridges.
+       Keep in mind that only one ship can exist on each tile, so they will need to be moved before more are created.
+       Whenever a ship enters a port it will automatically give all of its gold to the port (the pirates need to drop theirs on their own)
+       
+       
+[The Merchants]
+       There will be six merchant ports on each map.
+       Each merchant port has treasure that gains interest in the same way as treasure lying on the ground
+       Whenever a merchant port reaches 900 gold, it will spawn a ship and some number of pirates (bodyguards), half of the port's money will be split evenly amongst the pirates.
+       Merchant ships will path from their source port to another port, with preference being given to the port with the most money.
+       Merchant ships will spawn carrying extra gold equal to one quarter of the distance to the destination port divided by the width of the map.
+       Merchant ships will path from their home port to their destination port using A*, if there is no path they will attempt to move in a random direction.
+       All of the units on these ships will be carrying gold, kill them to add to your vast wealth, kill all of them and steal their ship to add even more to your vast wealth.
+       Merchant ships are neutral in nature until you attack them, at which point they will fight back and try to destroy you.
+       Merchants get angry when you kill their men, and will send out stronger armies if their cargo never arrives. If their ships arrive safely, they will send weaker detachments to guard them.
+       There are two identical Merchant AI's, Units with Owner 2 move after player 0's turn, while Units with Onwer 3 move after player 1's turn
+
+[Starting State]
+      Each player will begin with a port, a ship, and 5 pirates. (The units will start on the port)
+      Each player will also start with 500 gold in their bank (This can be withdrawn immediately)
+       
+        
+       

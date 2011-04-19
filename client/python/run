@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python2.6 main.py $1 $2

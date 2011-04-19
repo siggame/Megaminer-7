@@ -1,0 +1,7 @@
+Here's how to build your code using "make":
+1) Choose the language you want (C++, Java, Python, or C#).
+2) Find the "MakefileX" and "runX" where X is your language you wish to code in and remove the X part of the string
+3) Now when you make it should make for the correct language you will be coding in!
+4) Modify the basic code we in the language you chose gave you to make the best AI possible!
+
+If you have any questions ask a Dev!
