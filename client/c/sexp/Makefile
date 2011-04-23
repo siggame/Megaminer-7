@@ -10,6 +10,9 @@ all: sexp.a libclient_sexp.a
 clean:
 	rm -f $(objects) $(libclient_objects) $(deps) sexp.a libclient_sexp.a
 
+lex.yy.h:
+lex.yy.cpp: sexp.l
+	 flex --outfile=lex.yy.cpp --header-file=lex.yy.h sexp.l
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
